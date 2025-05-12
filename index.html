@@ -3,24 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conversor de Temperatura</title>
+  <title>Tempo de Viagem</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Conversor de Temperatura</h1>
+    <h1>Calculadora de Tempo de Viagem</h1>
 
-    <label for="temp">Temperatura:</label>
-    <input type="number" id="temp" placeholder="Digite o valor">
-
-    <select id="unit">
-      <option value="CtoF">Celsius para Fahrenheit</option>
-      <option value="FtoC">Fahrenheit para Celsius</option>
-      <option value="CtoK">Celsius para Kelvin</option>
-      <option value="KtoC">Kelvin para Celsius</option>
-    </select>
-
-    <button onclick="converter()">Converter</button>
+    <input type="number" id="distancia" placeholder="Distância (km)">
+    <input type="number" id="velocidade" placeholder="Velocidade média (km/h)">
+    
+    <button onclick="calcularTempo()">Calcular</button>
 
     <div id="resultado"></div>
   </div>

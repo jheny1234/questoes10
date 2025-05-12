@@ -1,32 +1,17 @@
-function converter() {
-  const temp = parseFloat(document.getElementById("temp").value);
-  const unit = document.getElementById("unit").value;
+function calcularTempo() {
+  const distancia = parseFloat(document.getElementById("distancia").value);
+  const velocidade = parseFloat(document.getElementById("velocidade").value);
   const resultado = document.getElementById("resultado");
-  let converted;
 
-  if (isNaN(temp)) {
-    resultado.innerText = "Por favor, insira um número válido.";
+  if (isNaN(distancia) || isNaN(velocidade) || velocidade <= 0) {
+    resultado.innerText = "Insira valores válidos.";
     return;
   }
 
-  switch (unit) {
-    case "CtoF":
-      converted = (temp * 9/5) + 32;
-      resultado.innerText = `${temp}°C = ${converted.toFixed(2)}°F`;
-      break;
-    case "FtoC":
-      converted = (temp - 32) * 5/9;
-      resultado.innerText = `${temp}°F = ${converted.toFixed(2)}°C`;
-      break;
-    case "CtoK":
-      converted = temp + 273.15;
-      resultado.innerText = `${temp}°C = ${converted.toFixed(2)}K`;
-      break;
-    case "KtoC":
-      converted = temp - 273.15;
-      resultado.innerText = `${temp}K = ${converted.toFixed(2)}°C`;
-      break;
-    default:
-      resultado.innerText = "Unidade de conversão inválida.";
-  }
+  const tempo = distancia / velocidade;
+
+  const horas = Math.floor(tempo);
+  const minutos = Math.round((tempo - horas) * 60);
+
+  resultado.innerText = `Tempo estimado: ${horas}h ${minutos}min`;
 }
