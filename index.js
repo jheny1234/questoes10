@@ -1,29 +1,22 @@
-function calcularIMC() {
-  const peso = parseFloat(document.getElementById("peso").value);
-  const altura = parseFloat(document.getElementById("altura").value);
+function converterMoeda() {
+  const valor = parseFloat(document.getElementById("valor").value);
+  const de = document.getElementById("de").value;
+  const para = document.getElementById("para").value;
   const resultado = document.getElementById("resultado");
 
-  if (isNaN(peso) || isNaN(altura) || altura <= 0) {
-    resultado.innerText = "Por favor, insira valores válidos.";
+  if (isNaN(valor)) {
+    resultado.innerText = "Por favor, insira um valor válido.";
     return;
   }
 
-  const imc = peso / (altura * altura);
-  let classificacao = "";
+  // Taxas de câmbio fixas (exemplo)
+  const taxas = {
+    BRL: { USD: 0.20, EUR: 0.18, BRL: 1 },
+    USD: { BRL: 5.00, EUR: 0.90, USD: 1 },
+    EUR: { BRL: 5.50, USD: 1.10, EUR: 1 }
+  };
 
-  if (imc < 18.5) {
-    classificacao = "Abaixo do peso";
-  } else if (imc < 24.9) {
-    classificacao = "Peso normal";
-  } else if (imc < 29.9) {
-    classificacao = "Sobrepeso";
-  } else if (imc < 34.9) {
-    classificacao = "Obesidade grau 1";
-  } else if (imc < 39.9) {
-    classificacao = "Obesidade grau 2";
-  } else {
-    classificacao = "Obesidade grau 3 (mórbida)";
-  }
+  const convertido = valor * taxas[de][para];
 
-  resultado.innerText = `IMC: ${imc.toFixed(2)} - ${classificacao}`;
+  resultado.innerText = `${valor.toFixed(2)} ${de} = ${convertido.toFixed(2)} ${para}`;
 }

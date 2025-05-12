@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calculadora de IMC</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de Moeda</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Calculadora de IMC</h1>
+    <h1>Conversor de Moeda</h1>
 
-    <input type="number" id="peso" placeholder="Peso (kg)" />
-    <input type="number" id="altura" placeholder="Altura (m)" />
+    <input type="number" id="valor" placeholder="Digite o valor" />
 
-    <button onclick="calcularIMC()">Calcular</button>
+    <div class="selects">
+      <select id="de">
+        <option value="BRL">Real (BRL)</option>
+        <option value="USD">Dólar (USD)</option>
+        <option value="EUR">Euro (EUR)</option>
+      </select>
+
+      <span>→</span>
+
+      <select id="para">
+        <option value="USD">Dólar (USD)</option>
+        <option value="EUR">Euro (EUR)</option>
+        <option value="BRL">Real (BRL)</option>
+      </select>
+    </div>
+
+    <button onclick="converterMoeda()">Converter</button>
 
     <div id="resultado"></div>
   </div>
