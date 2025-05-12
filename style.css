@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f4f8;
+  background-color: #eef2f5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,46 +12,34 @@ body {
   background: white;
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 300px;
 }
 
-input, select, button {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  font-size: 1em;
-  box-sizing: border-box;
+.matriz {
+  display: grid;
+  grid-template-columns: repeat(2, 60px);
+  gap: 10px;
+  justify-content: center;
+  margin: 15px 0;
 }
 
-.selects {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.selects select {
-  width: 45%;
-}
-
-.selects span {
-  font-size: 1.5em;
+.matriz input,
+.matriz div {
+  width: 60px;
+  height: 40px;
+  font-size: 1.2em;
+  text-align: center;
 }
 
 button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  margin-top: 10px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #45a049;
-}
-
-#resultado {
-  margin-top: 20px;
-  font-size: 1.2em;
-  color: #333;
+.resultado div {
+  background-color: #f0f0f0;
+  line-height: 40px;
 }

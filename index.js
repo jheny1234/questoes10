@@ -1,22 +1,25 @@
-function converterMoeda() {
-  const valor = parseFloat(document.getElementById("valor").value);
-  const de = document.getElementById("de").value;
-  const para = document.getElementById("para").value;
-  const resultado = document.getElementById("resultado");
+function somarMatrizes() {
+  const a = [
+    [parseFloat(document.getElementById('a00').value), parseFloat(document.getElementById('a01').value)],
+    [parseFloat(document.getElementById('a10').value), parseFloat(document.getElementById('a11').value)]
+  ];
+  const b = [
+    [parseFloat(document.getElementById('b00').value), parseFloat(document.getElementById('b01').value)],
+    [parseFloat(document.getElementById('b10').value), parseFloat(document.getElementById('b11').value)]
+  ];
 
-  if (isNaN(valor)) {
-    resultado.innerText = "Por favor, insira um valor válido.";
+  if (a.flat().some(isNaN) || b.flat().some(isNaN)) {
+    alert("Preencha todos os campos com números válidos.");
     return;
   }
 
-  // Taxas de câmbio fixas (exemplo)
-  const taxas = {
-    BRL: { USD: 0.20, EUR: 0.18, BRL: 1 },
-    USD: { BRL: 5.00, EUR: 0.90, USD: 1 },
-    EUR: { BRL: 5.50, USD: 1.10, EUR: 1 }
-  };
+  const result = [
+    [a[0][0] + b[0][0], a[0][1] + b[0][1]],
+    [a[1][0] + b[1][0], a[1][1] + b[1][1]]
+  ];
 
-  const convertido = valor * taxas[de][para];
-
-  resultado.innerText = `${valor.toFixed(2)} ${de} = ${convertido.toFixed(2)} ${para}`;
+  document.getElementById('res00').textContent = result[0][0];
+  document.getElementById('res01').textContent = result[0][1];
+  document.getElementById('res10').textContent = result[1][0];
+  document.getElementById('res11').textContent = result[1][1];
 }

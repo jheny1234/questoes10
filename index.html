@@ -3,34 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conversor de Moeda</title>
+  <title>Soma de Matrizes</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Conversor de Moeda</h1>
+    <h1>Soma de Matrizes 2x2</h1>
 
-    <input type="number" id="valor" placeholder="Digite o valor" />
-
-    <div class="selects">
-      <select id="de">
-        <option value="BRL">Real (BRL)</option>
-        <option value="USD">Dólar (USD)</option>
-        <option value="EUR">Euro (EUR)</option>
-      </select>
-
-      <span>→</span>
-
-      <select id="para">
-        <option value="USD">Dólar (USD)</option>
-        <option value="EUR">Euro (EUR)</option>
-        <option value="BRL">Real (BRL)</option>
-      </select>
+    <div class="matriz">
+      <h3>Matriz A</h3>
+      <input type="number" id="a00">
+      <input type="number" id="a01">
+      <input type="number" id="a10">
+      <input type="number" id="a11">
     </div>
 
-    <button onclick="converterMoeda()">Converter</button>
+    <div class="matriz">
+      <h3>Matriz B</h3>
+      <input type="number" id="b00">
+      <input type="number" id="b01">
+      <input type="number" id="b10">
+      <input type="number" id="b11">
+    </div>
 
-    <div id="resultado"></div>
+    <button onclick="somarMatrizes()">Somar</button>
+
+    <div class="matriz resultado" id="resultado">
+      <h3>Resultado (A + B)</h3>
+      <div id="res00">-</div>
+      <div id="res01">-</div>
+      <div id="res10">-</div>
+      <div id="res11">-</div>
+    </div>
   </div>
 
   <script src="index.js"></script>
